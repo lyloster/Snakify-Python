@@ -9,12 +9,14 @@
 n = int(input())
 
 #creating an empty deck
-deck = [False for num in range(n+1)]
+deck = [False for num in range(n)]
 
 # filling up the deck
-for num in range(n+1):
+# not sure why starting at 1, otherwise off by 1
+for num in range(1, n):
     card = int(input())
-    deck[card+1] = True
+    # zero-based indeces
+    deck[card-1] = True
     
 for card in deck:
     if deck[card] == False:
